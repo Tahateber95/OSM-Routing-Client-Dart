@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:routing_client_dart/src/models/road_helper.dart';
@@ -22,6 +23,7 @@ mixin OSRMHelper {
     option += "steps=$steps&";
     option += "overview=${overview.value}&";
     option += "geometries=${geometries.value}";
+    log("url: $url?$option");
     return "$url?$option";
   }
 
