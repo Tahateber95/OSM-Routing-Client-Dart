@@ -3,8 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:routing_client_dart/src/models/road_helper.dart';
 import 'package:routing_client_dart/src/utilities/utils.dart';
+
 /// [OSRMHelper]
-/// 
+///
 /// this helper fpr OSRMManager that contain URL , intruction generator
 mixin OSRMHelper {
   String generatePath(
@@ -16,8 +17,7 @@ mixin OSRMHelper {
     Overview overview = Overview.full,
     Geometries geometries = Geometries.polyline,
   }) {
-    String url =
-        "$server/routed-${roadType.name}/${profile.name}/v1/driving/$waypoints";
+    String url = "$server/${profile.name}/v1/driving/$waypoints";
     var option = "";
     option += "steps=$steps&";
     option += "overview=${overview.value}&";
